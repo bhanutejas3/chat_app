@@ -1,0 +1,101 @@
+.main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  background-color: #131324;
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+
+    .logo {
+      height: 5rem;
+    }
+
+    .app_name {
+      color: white;
+      text-transform: uppercase;
+    }
+
+  }
+
+  .test,
+  .form_input {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .form_input {
+    background-color: #00000076;
+    border-radius: 2rem;
+    padding: 3rem 5rem;
+  }
+
+  .form-control {
+    background-color: white;
+    padding: 1rem;
+    border: 0.1rem solid #4e0eff;
+    border-radius: 0.4rem;
+    color: white;
+    width: 100%;
+    font-size: 1rem;
+    text-transform: capitalize;
+    flex: auto;
+
+    &:focus {
+      border: 0.1rem solid #997af0;
+      outline: none;
+    }
+  }
+
+  .submit_user {
+    background-color: #4e0eff;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: #4e0eff;
+    }
+  }
+
+  .link_login,
+  .link_register {
+    color: white;
+    text-transform: uppercase;
+
+    .login_link,
+    .register_link {
+      color: #4e0eff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+
+
+}
+
+
+
+
+html {
+  background-color: #131324;
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium',
+    'Arial Narrow',
+    Arial,
+    sans-serif;
+}

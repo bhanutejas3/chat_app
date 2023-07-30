@@ -1,0 +1,19 @@
+.logo,
+.text-end {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+
+    .app_name {
+        text-transform: uppercase;
+    }
+
+    color: white;
+
+    text-decoration: none !important;
+}
+
+.navBar {
+    background-color: skyblue;
+}
