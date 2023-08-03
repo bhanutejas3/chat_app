@@ -19,6 +19,7 @@ function Register() {
     confirmPassword: "",
   });
   const key: string = import.meta.env.VITE_LOCALHOST_KEY;
+  const id: string = import.meta.env.VITE_LOCALHOST_ID;
   const [cookies] = useCookies([key]);
   const [loading, setLoading] = useState(false);
   const tostOption_error = (message: string) => {
@@ -66,8 +67,8 @@ function Register() {
       }
 
       if (data.status === true) {
-        localStorage.setItem(key, JSON.stringify(data.user.id));
-        navigate("/chat");
+        localStorage.setItem(id, JSON.stringify(data.user.id));
+        navigate("/avatar");
       }
     }
   };

@@ -18,12 +18,12 @@ function Login() {
   });
 
   const key: string = import.meta.env.VITE_LOCALHOST_KEY;
+  const userId: string = import.meta.env.VITE_LOCALHOST_ID;
   const [cookies] = useCookies([key]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const verifyCookie = async () => {
-      console.log(cookies.token);
       setLoading(true);
       const { data } = await axios.post(
         authRoute,
@@ -67,6 +67,8 @@ function Login() {
         }
 
         if (data.status === true) {
+          const userDetails = [data.user._id, data.user.avatarImage];
+          localStorage.setItem(userId, JSON.stringify(userDetails));
           navigate("/chat");
         }
       } catch (error) {

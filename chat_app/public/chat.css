@@ -1,0 +1,177 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 0.1rem;
+    overflow: hidden;
+    color: white;
+    height: 80vh;
+    width: 90vw;
+    background-color: #00000076;
+    box-shadow: 2px 2px 2px black;
+
+    .chat_contacts {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 2rem;
+        row-gap: 2rem;
+        overflow: auto;
+        text-transform: capitalize;
+
+        &::-webkit-scrollbar {
+            width: 0.4rem;
+            background: white;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: skyblue;
+            border-radius: 5rem;
+        }
+
+        .contactsSide {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 2rem;
+            row-gap: 2rem;
+            text-transform: capitalize;
+            width: 100%;
+            cursor: pointer;
+
+            .selected {
+                border-radius: 100%;
+                background-color: darkgray;
+            }
+
+            .allContacts {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                justify-content: center;
+                gap: 2rem;
+                border-radius: 0.4rem;
+                width: 100%;
+
+                &:hover {
+                    background-color: gray;
+                }
+
+
+                .selected {
+                    border-radius: 100%;
+                    background-color: darkgray;
+                }
+
+                .contactLogo {
+                    height: 5rem;
+                }
+            }
+
+        }
+    }
+
+
+    .chatWindow {
+        background-color: #FFFAE3;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+
+        .defaultMessage {
+            color: #00000076;
+            text-transform: capitalize;
+        }
+
+        .chatModel {
+            display: grid;
+            height: 100%;
+            width: 100%;
+            grid-template-rows: 95% 5%;
+
+
+            .emojimsgInput {
+                color: #080420;
+                display: grid;
+                align-items: center;
+                grid-template-columns: 10% 90%;
+                margin-left: 1%;
+
+                .emojiInput {
+                    display: flex;
+                    align-items: center;
+                    color: #080420;
+                    gap: 1rem;
+
+                    .emojiButton {
+                        position: relative;
+                        width: 0%;
+
+                        .EmojiPickerReact {
+                            position: absolute;
+                            top: -450px
+                        }
+                    }
+                }
+
+                gap: 0.5rem;
+
+
+
+                .messageInputContainer {
+                    display: flex;
+                    margin-right: 2%;
+                    margin-left: -9%;
+
+                    .messageInput {
+                        width: 100%;
+                    }
+                }
+            }
+
+
+
+            .messageDisplay {
+                padding: 1rem 2rem;
+                display: flex;
+                flex-direction: column;
+                overflow: auto;
+                align-items: center;
+                gap: 1rem;
+
+                .message {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+
+                    .messageContent {
+                        max-width: 40%;
+                        align-items: center;
+                        overflow-wrap: break-word;
+                        color: blue;
+                        border-radius: 1rem;
+                        padding: 0.5% 1% 0.5% 1%;
+
+                    }
+                }
+
+                .sender {
+                    justify-content: flex-end;
+
+                    .messageContent {
+                        background-color: #4f04ff21;
+                    }
+                }
+
+                .receiver {
+                    justify-content: flex-start;
+
+                    .messageContent {
+                        background-color: #4f04ff21;
+                    }
+                }
+            }
+
+        }
+    }
+}
