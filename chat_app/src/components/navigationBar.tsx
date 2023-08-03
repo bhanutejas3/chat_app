@@ -12,7 +12,7 @@ const NavigationBar = (props: {
 
   const handleClick = () => {
     removeCookie("token");
-    localStorage.removeItem(userId);
+    localStorage.clear();
   };
 
   return (

@@ -5,6 +5,7 @@ const socket = require("socket.io");
 const authRoutes = require("./routes/appRoute");
 const messagesRoutes = require("./routes/messagesRoute");
 const cookieParser = require("cookie-parser");
+const RateLimit = require("express-rate-limit");
 
 const app = express();
 require("dotenv").config();
@@ -12,6 +13,12 @@ require("dotenv").config();
 portNumber = process.env.PORT;
 mongoUrl = process.env.MONGO_URL;
 
+const limiter = RateLimit({
+  windowMs: 1 * 60 * 1000, // 1 minute
+  max: 100,
+  message: "Too many requests, please try again later.",
+});
+app.use(limiter);
 app.use(
   cors({
     methods: ["GET", "POST", "PUT", "DELETE"],
