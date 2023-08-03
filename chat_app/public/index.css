@@ -33,7 +33,8 @@
     gap: 2rem;
   }
 
-  .form_input {
+  .form_input,
+  .form_avatar {
     background-color: #00000076;
     border-radius: 2rem;
     padding: 3rem 5rem;
@@ -44,16 +45,19 @@
     padding: 1rem;
     border: 0.1rem solid #4e0eff;
     border-radius: 0.4rem;
-    color: white;
     width: 100%;
     font-size: 1rem;
-    text-transform: capitalize;
     flex: auto;
 
     &:focus {
       border: 0.1rem solid #997af0;
       outline: none;
     }
+  }
+
+  .form-control::placeholder {
+    /* Apply uppercase style to the placeholder text */
+    text-transform: capitalize;
   }
 
   .submit_user {

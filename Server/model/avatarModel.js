@@ -4,7 +4,6 @@ const avatarModel = new mongoose.Schema({
   avatar: {
     type: String,
     required: true,
-    unique: true,
   },
   avatarNumber: {
     type: Number,

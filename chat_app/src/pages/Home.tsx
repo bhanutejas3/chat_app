@@ -3,7 +3,7 @@ import NavigationBar from "../components/navigationBar";
 function Home() {
   return (
     <>
-      <NavigationBar></NavigationBar>
+      <NavigationBar logoutButton={false}></NavigationBar>
     </>
   );
 }

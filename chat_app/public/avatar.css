@@ -2,3 +2,41 @@
     color: white;
     text-transform: capitalize
 }
+
+
+.form_avatar {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .avatarImg {
+        height: 10rem;
+        cursor: pointer;
+        border-radius: 100%;
+
+        &:hover {
+            border: 0.4rem solid #4e0eff;
+        }
+    }
+
+    .selected {
+        border-radius: 100%;
+        border: 0.4rem solid #4e0eff;
+
+        .avatarImg {
+            &:hover {
+                border: none;
+            }
+        }
+    }
+
+    .profile_picture_btn {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+    }
+
+}

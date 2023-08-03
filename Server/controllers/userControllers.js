@@ -92,3 +92,43 @@ module.exports.login = async (req, res, next) => {
     next(error);
   }
 };
+
+module.exports.login = async (req, res, next) => {
+  try {
+    const { username, password } = req.body;
+    if (!username || !password) {
+      return res.json({
+        message: "username and password are missing",
+        status: false,
+      });
+    }
+    const dataUser = await User.findOne({ username }).select("+password");
+
+    if (!dataUser) {
+      return res.json({
+        message: "Incorrect username or password",
+        status: false,
+      });
+    }
+    const passwordCheck = await bcrypt.compare(password, dataUser.password);
+
+    if (!passwordCheck) {
+      return res.json({
+        message: "Incorrect username or password",
+        status: false,
+      });
+    }
+
+    let user = dataUser.toObject();
+    delete user["password"];
+
+    const token = createSecretToken(user._id);
+    res.cookie("token", token, {
+      withCredentials: true,
+      httpOnly: false,
+    });
+    return res.json({ message: "User Login success", status: true, user });
+  } catch (error) {
+    next(error);
+  }
+};
